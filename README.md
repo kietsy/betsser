@@ -111,7 +111,7 @@ Window
 ```
 
 ## TODO
-* [ ] finish [grammar](https://github.com/despairblue/bettser/grammar)
+* [ ] finish [grammar](https://github.com/despairblue/bettser/tree/master/grammar)
 * [ ] generate parser
 * [ ] write compiler to output xml templates
 * [ ] write compiler to output native titanium code
