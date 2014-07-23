@@ -1,4 +1,4 @@
-# Bettser (WIP)
+# Betsser (WIP)
 
 A indentation and space sensitive but case insensitive alternative to the
 Alloy's XML templates.
@@ -89,7 +89,7 @@ Parser output:
 </Alloy>
 ```
 
-### Bettser
+### Betsser
 ``` Jade
 Window
   ButtonBar platform:ios onClick:sayHi
@@ -111,7 +111,7 @@ Window
 ```
 
 ## TODO
-* [ ] finish [grammar](https://github.com/despairblue/bettser/tree/master/grammar)
+* [ ] finish [grammar](https://github.com/despairblue/betsser/tree/master/grammar)
 * [ ] generate parser
 * [ ] write compiler to output xml templates
 * [ ] write compiler to output native titanium code
