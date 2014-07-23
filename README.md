@@ -18,7 +18,7 @@ Example:
     <Label id="score">likes</Label>
 <\View>
 ```
-Alternativ in Jadestyle:
+Alternative in Jadestyle:
 ``` Jade
 View id:voting
     Button id:like title:Like
