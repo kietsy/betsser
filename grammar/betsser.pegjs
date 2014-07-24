@@ -33,6 +33,15 @@
     console.debug(object)
   }
 
+  function trace(rule, args) {
+     console.debug('Rule: ' + rule)
+     console.debug('Arguments: ' + JSON.stringify(args, null, 2))
+     console.debug('Offset: ' + offset())
+     console.debug('Line: ' + line())
+     console.debug('Column: ' + column())
+     console.debug('');
+  }
+
   function it(iterations, fn) {
     for (i = 0; i < iterations; iterations--) {
       fn(i);
@@ -55,7 +64,7 @@ node
   = indentChange:indent?
     tag:tag
     {
-      puts('at node "' + tag.name + '"')
+      trace('node')
       puts('indent by ' + indentChange)
       if (indentChange > 0) {
         it(indentChange, function () {
@@ -76,7 +85,10 @@ node
 
 ws 'whitespace'
   = ws:[ ]+
-    { return ws.join('') }
+  {
+    trace('whitespace', {count: ws.length})
+    return ws.join('')
+  }
 
 newline 'newline'
   = [\n\r]
@@ -96,6 +108,8 @@ tag 'tag'
     ws*
     (newline/EOF)
     {
+      trace('tag', [id, properties, content])
+
       ret = {
         name: id,
         properties: {},
@@ -119,6 +133,7 @@ name 'name'
 property 'property'
   = name:name colon string:string
     {
+      trace('property', [name, string])
       return {
         name:name,
         string:string
@@ -131,6 +146,7 @@ id 'id'
 indent
   = space:' '*
   {
+    trace('indent', {count: space.length})
     if (!indentToken) {
       indentToken = space.length
     }
