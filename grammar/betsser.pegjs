@@ -75,7 +75,7 @@ node
     }
 
 ws 'whitespace'
-  = ws:[ ]*
+  = ws:[ ]+
     { return ws.join('') }
 
 newline 'newline'
@@ -93,7 +93,7 @@ tag 'tag'
       content:string
       {return content}
     )?
-    ws
+    ws*
     (newline/EOF)
     {
       ret = {
