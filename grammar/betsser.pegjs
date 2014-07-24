@@ -9,6 +9,16 @@
     properties: {},
     children: [],
     parentNode: null,
+    toJSON: function () {
+        return {
+          name: this.name,
+          properties: this.properties,
+          content: this.content,
+          children: this.children.map(function (node) {
+            return rootNode.toJSON.call(node)
+          })
+        }
+    },
   }
   // looks weird
   rootNode.parentNode = rootNode
@@ -21,21 +31,6 @@
 
   function puts(object) {
     console.debug(object)
-  }
-
-  function toJSON(ast) {
-    function clean(ast) {
-      return {
-        name: ast.name,
-        properties: ast.properties,
-        content: ast.content,
-        children: ast.children.map(function (node) {
-          return clean(node)
-        })
-      }
-    }
-
-    return JSON.stringify(clean(ast))
   }
 
   function it(iterations, fn) {
@@ -52,8 +47,8 @@ start
     nodes:node*
     newline*
     {
-      puts(toJSON(rootNode))
-      return toJSON(rootNode)
+      //puts(JSON.stringify(rootNode, null, 2))
+      return JSON.stringify(rootNode, null, 2)
     }
 
 node
