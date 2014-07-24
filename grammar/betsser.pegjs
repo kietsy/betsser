@@ -105,7 +105,7 @@ tag 'tag'
     )*
     content:(
       ws
-      content:string
+      content:ROL
       {return content}
     )?
     ws*
@@ -181,3 +181,9 @@ quotedString
 literal = string / quotedString
 quote = '\''
 EOF = !.
+ROL
+  = rest:[^\n]+ &(newline/EOF)
+  {
+    trace('ROL', rest.join('').trimRight())
+    return rest.join('').trimRight()
+  }
