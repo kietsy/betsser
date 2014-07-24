@@ -131,7 +131,7 @@ name 'name'
     'horizontalWrap'
 
 property 'property'
-  = name:name colon string:string
+  = name:name colon string:literal
     {
       trace('property', [name, string])
       return {
@@ -163,5 +163,18 @@ indent
   }
 
 colon = ':'
-string = string:[a-z]i* { return string.join('') }
+string
+  = string:[a-z]i+
+  {
+    trace('string', string.join(''))
+    return string.join('')
+  }
+quotedString
+  = quote string:[^\']* quote
+  {
+    trace('quotedString', string.join(''))
+    return string.join('')
+  }
+literal = string / quotedString
+quote = '\''
 EOF = !.
