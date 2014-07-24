@@ -99,7 +99,7 @@ tag 'tag'
       {return content}
     )?
     ws
-    newline
+    (newline/EOF)
     {
       ret = {
         name: id,
@@ -160,3 +160,4 @@ indent
 
 colon = ':'
 string = string:[a-z]i* { return string.join('') }
+EOF = !.
