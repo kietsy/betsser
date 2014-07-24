@@ -52,6 +52,9 @@
 }
 
 start
+  = SOF
+
+SOF
   = newline*
     nodes:node*
     newline*
