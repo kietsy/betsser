@@ -1,6 +1,6 @@
 # Betsser (WIP)
 
-A indentation and space sensitive but case insensitive alternative to the
+An indentation and space sensitive, but case insensitive alternative to the
 Alloy's XML templates.
 
 An alternative to [Alloy](https://github.com/appcelerator/alloy) since it seems
