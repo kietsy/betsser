@@ -143,13 +143,6 @@ indent
     indent = space.length / indentToken
     var difference = indent - oldIndent
 
-    puts('line:        ' + line())
-    puts('column:      ' + column())
-    puts('indentToken: ' + indentToken)
-    puts('indent:      ' + indent)
-    puts('difference:  ' + difference)
-    puts('')
-
     return difference
   }
 
