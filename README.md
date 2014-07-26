@@ -111,20 +111,21 @@ Window
 ```
 
 ## TODO
-* [ ] finish [grammar](https://github.com/despairblue/betsser/tree/master/grammar)
-* [ ] generate parser
-* [ ] write compiler to output xml templates
-* [ ] write compiler to output native titanium code
-* [ ] define public api
-* [ ] add titanium elements and there specific properties (geez, that'll be a lot of typing)
-* [ ] make all names case insensitive (output will have the right case)
-* [ ] write CLI
-* [ ] package for npm
-* [ ] publish package
+- [ ] write tests
+- [ ] finish [grammar](https://github.com/despairblue/betsser/tree/master/grammar)
+- [ ] generate parser
+- [ ] write compiler to output xml templates
+- [ ] write compiler to output native titanium code
+- [ ] define public api
+- [ ] add titanium elements and there specific properties (geez, that'll be a lot of typing)
+- [ ] make all names case insensitive (output will have the right case)
+- [ ] write CLI
+- [ ] package for npm
+- [ ] publish package
 
-## Contributions
+## Contributing
 
-Open a pull request as early as possible. Consider opening a issue before you
+Open a pull request as early as possible. Consider opening an issue before you
 start working on something to prevent duplication of work.
 
 ### Style Guide
