@@ -60,7 +60,8 @@ SOF
     newline*
     {
       //puts(JSON.stringify(rootNode, null, 2))
-      return JSON.stringify(rootNode, null, 2)
+      // return JSON.stringify(rootNode, null, 2)
+      return rootNode
     }
 
 node
