@@ -30,16 +30,16 @@
   }
 
   function puts(object) {
-    console.debug(object)
+    console.log(object)
   }
 
   function trace(rule, args) {
-     console.debug('Rule: ' + rule)
-     console.debug('Arguments: ' + JSON.stringify(args, null, 2))
-     console.debug('Offset: ' + offset())
-     console.debug('Line: ' + line())
-     console.debug('Column: ' + column())
-     console.debug('');
+     console.log('Rule: ' + rule)
+     console.log('Arguments: ' + JSON.stringify(args, null, 2))
+     console.log('Offset: ' + offset())
+     console.log('Line: ' + line())
+     console.log('Column: ' + column())
+     console.log('');
   }
 
   function it(iterations, fn) {
@@ -144,7 +144,10 @@ property 'property'
     }
 
 id 'id'
-  = 'View'/'Button'/'Label'/'TableViewRow'
+  = view/'Button'/'Label'/tableviewrow
+
+view = 'View'i {return 'View'}
+tableviewrow = 'TableViewRow'i {return 'TableViewRow'}
 
 indent
   = space:' '*

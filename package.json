@@ -1,0 +1,33 @@
+{
+  "name": "betsser",
+  "version": "0.0.0",
+  "description": "An indentation and space sensitive, but case insensitive alternative to the Alloy's XML templates.",
+  "main": "index.js",
+  "scripts": {
+    "coverage": "istanbul cover node_modules/.bin/jasmine",
+    "debug": "node-inspector --save-live-edit",
+    "make": "pegjs grammar/betsser.pegjs",
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/despairblue/betsser.git"
+  },
+  "keywords": [
+    "Alloy",
+    "Titanium"
+  ],
+  "author": "Danny Arnold",
+  "license": "Apache License Version 2.0, January 2004 http://www.apache.org/licenses/",
+  "bugs": {
+    "url": "https://github.com/despairblue/betsser/issues"
+  },
+  "homepage": "https://github.com/despairblue/betsser",
+  "devDependencies": {
+    "install": "^0.1.7",
+    "istanbul": "^0.3.0",
+    "jasmine": "https://github.com/pivotal/jasmine-npm/archive/master.tar.gz",
+    "node-inspector": "^0.7.4",
+    "pegjs": "^0.8.0"
+  }
+}
