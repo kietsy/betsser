@@ -87,12 +87,7 @@ node
       return tag
     }
 
-ws 'whitespace'
-  = ws:[ ]+
-  {
-    trace('whitespace', {count: ws.length})
-    return ws.join('')
-  }
+ws 'whitespace' = $[ ]+
 
 newline 'newline'
   = [\n\r]
@@ -170,24 +165,15 @@ indent
   }
 
 colon = ':'
-string
-  = string:[a-z]i+
-  {
-    trace('string', string.join(''))
-    return string.join('')
-  }
-quotedString
-  = quote string:[^\']* quote
-  {
-    trace('quotedString', string.join(''))
-    return string.join('')
-  }
+string = $[a-z]i+
+quotedString = quote string:$[^\']* quote {
+    trace('quotedString', string)
+    return string
+}
 literal = string / quotedString
 quote = '\''
 EOF = !.
-ROL
-  = rest:[^\n]+ &(newline/EOF)
-  {
-    trace('ROL', rest.join('').trimRight())
-    return rest.join('').trimRight()
-  }
+ROL = rest:$[^\n]+ &(newline/EOF) {
+  trace('ROL', rest.trimRight())
+  return rest.trimRight()
+}
